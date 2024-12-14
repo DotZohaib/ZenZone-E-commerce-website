@@ -53,7 +53,7 @@ const Navbar = () => {
 
         {/* Search Bar and Icons */}
         <div className="flex items-center gap-2 md:gap-4">
-          <div className="flex items-center bg-gray-100 rounded-md px-2 md:px-4 py-1 md:py-2 w-full max-w-sm">
+          <div className="flex  items-center bg-gray-100 rounded-md px-2 md:px-4 py-1 md:py-2 w-full max-w-sm">
             <input
               type="text"
               placeholder="What are you looking for?"
@@ -62,13 +62,13 @@ const Navbar = () => {
             <FaSearch className="text-gray-500 text-xs md:text-lg cursor-pointer" />
           </div>
           <div className="flex items-center gap-2 md:gap-6">
-            <FaHeart className="text-gray-700 text-xs md:text-lg cursor-pointer hover:text-purple-700 transition-transform transform hover:scale-110" />
-            <FaShoppingCart className="text-gray-700 text-xs md:text-lg cursor-pointer hover:text-purple-700 transition-transform transform hover:scale-110" />
+            <FaHeart className="text-gray-700 hidden md:block text-xs md:text-lg cursor-pointer hover:text-purple-700 transition-transform transform hover:scale-110" />
+            <FaShoppingCart className="text-gray-700 hidden md:block text-xs md:text-lg cursor-pointer hover:text-purple-700 transition-transform transform hover:scale-110" />
             <UserProfilePopover />
           </div>
           {/* Sidebar Toggle Button */}
           <button
-            className="text-gray-800 text-lg pl-2 md:text-2xl focus:outline-none"
+            className="text-gray-800 md:hidden block text-lg pl-2 md:text-2xl focus:outline-none"
             onClick={toggleSidebar}
           >
             <FaBars />
