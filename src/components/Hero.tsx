@@ -28,46 +28,44 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-br  min-h-screen flex items-center justify-center px-4 md:px-8">
-      <div className="absolute inset-0 "></div>
-      
-      <div className="relative z-10 max-w-6xl w-full bg-white bg-opacity-90 rounded-lg shadow-xl p-8 md:p-12">
+    <div className="relative bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen flex items-center justify-center p-4">
+      <div className="relative z-10 max-w-6xl w-full bg-white bg-opacity-90 rounded-lg shadow-lg p-6 md:p-10 lg:p-12">
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="bg-red-600 h-6 w-2"></span>
-            <h3 className="text-2xl font-bold text-red-700 uppercase tracking-wide">Today&apos;s</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-red-700 uppercase tracking-wide">Today&apos;s</h3>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">New Stock Category</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900">New Stock Category</h2>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center mt-8 gap-10">
+        <div className="flex flex-wrap items-center justify-center mt-8 gap-6 lg:gap-10">
           {/* Image Section */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-full sm:w-auto">
             <img
               src="/images/newsletter.png"
               alt="Speaker"
-              className="w-full max-w-sm rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Content Section */}
-          <div className="text-center md:text-left">
+          <div className="text-center sm:text-left flex-1">
             <p className="text-green-600 text-lg mb-2 font-semibold">Categories</p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
               Enhance Your Music Experience
             </h1>
-            <p className="text-gray-700 text-base mt-4 mb-6">
+            <p className="text-gray-700 text-sm sm:text-base mt-4 mb-6">
               Discover the ultimate sound quality with our newly launched products. Don’t miss out on these amazing offers.
             </p>
 
             {/* Countdown Timer */}
-            <div className="flex justify-center md:justify-start gap-4 mb-6">
+            <div className="flex justify-center sm:justify-start flex-wrap gap-4 mb-6">
               {['Days', 'Hours', 'Minutes', 'Seconds'].map((unit, idx) => (
                 <div
                   key={unit}
-                  className="bg-gray-900 text-white rounded-lg shadow p-4 w-20 text-center"
+                  className="bg-gray-900 text-white rounded-lg shadow p-3 sm:p-4 w-16 sm:w-20 text-center"
                 >
-                  <span className="block text-2xl font-bold">
+                  <span className="block text-xl sm:text-2xl font-bold">
                     {idx === 0
                       ? timeLeft.days
                       : idx === 1
@@ -76,15 +74,18 @@ const Hero = () => {
                       ? timeLeft.minutes
                       : timeLeft.seconds}
                   </span>
-                  <span className="text-gray-300 text-sm">{unit}</span>
+                  <span className="text-gray-300 text-xs sm:text-sm">{unit}</span>
                 </div>
               ))}
             </div>
 
-            {/* Call to Action */}
-            <button className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 text-white font-semibold text-lg py-2 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <Link href="/Cart">Buy Now!</Link>
-            </button>
+            <Link
+  href="/Cart"
+  className="inline-block bg-gradient-to-r from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 text-white font-semibold text-base sm:text-lg py-2 px-4 sm:px-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+>
+  Buy Now!
+</Link>
+
           </div>
         </div>
       </div>
