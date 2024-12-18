@@ -214,18 +214,18 @@ const Checkout: React.FC = () => {
 
             {/* Coupon Code */}
             <div className="mt-4">
-              <div className="flex relative">
+                <div className="flex  relative">
                 <input
                   type="text"
                   placeholder="Coupon Code"
                   ref={couponRef}
                   value={coupon}
                   onChange={(e) => setCoupon(e.target.value)}
-                  className="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:border-red-500 transition"
+                  className="flex-1 border border-gray-300 rounded-l px-2 md:px-4 py-2 focus:outline-none focus:border-red-500 transition"
                 />
                 <button
                   onClick={handleCouponApply}
-                  className={`bg-red-500 text-white px-4 py-2 rounded-r transition ${
+                  className={`bg-red-500 text-white px-2 md:px-4 py-2 rounded-r transition ${
                     couponApplied ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={couponApplied}
